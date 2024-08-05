@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 	<Metadata>
-		<Identity Id="MahAppsIconPackPreview.4ec776a2-0d38-402b-adc9-9508413af6b0" Version="1.0" Language="en-US" Publisher="David von Garrel" />
+		<Identity Id="MahAppsIconPackPreview.4ec776a2-0d38-402b-adc9-9508413af6b0" Version="1.0" Language="en-US" Publisher="davqq" />
 		<DisplayName>MahApps Icon Pack Preview</DisplayName>
 		<Description xml:space="preserve">This Visual Studio extension provides a preview of MahApps icons directly in the XAML and C# code editor. When you reference a MahApps icon in your code, this extension displays a visual preview of the icon next to the code reference, making it easier to find and use the correct icons.</Description>
 		<Tags>MahApps, Icon, Preview</Tags>

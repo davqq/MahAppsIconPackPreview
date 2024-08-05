@@ -41,12 +41,10 @@ namespace MaterialIconPreview.Adornments {
             if (_isProcessing)
                 yield break;
 
-            string pattern = @"(PackIcon\w+Kind)\.(\w+)"; 
-
             foreach (SnapshotSpan span in spans) {
                 SnapshotSpan currentSpan = span;
                 string text = currentSpan.GetText();
-                MatchCollection matches = Regex.Matches(text, pattern);
+                MatchCollection matches = Regex.Matches(text, PackIconControlUtil.REGAX_PATTERN);
 
                 foreach (Match match in matches) {
                     IntraTextAdornmentTag tag = new(new IconAdornment(match.Value, _view), null, PositionAffinity.Successor);
