@@ -1,55 +1,90 @@
-name: Build and Release
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: "Build"
 
 on:
   push:
-    tags:
-      - 'v*.*.*'
-
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+    branches: [master]
+      
 jobs:
   build:
+    outputs:
+      version: ${{ steps.vsix_version.outputs.version-number }}
+    name: Build 
+    runs-on: windows-2022
+    env:
+      Configuration: Release
+      DeployExtension: False
+      VsixManifestPath: src\MahAppsIconPackPreview\source.extension.vsixmanifest
+      VsixManifestSourcePath: src\MahAppsIconPackPreview\source.extension.cs
+      
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup .NET build dependencies
+      uses: timheuer/bootstrap-dotnet@v1
+      with:
+        nuget: 'false'
+        sdk: 'false'
+        msbuild: 'true'
+
+    - name: Increment VSIX version
+      id: vsix_version
+      uses: timheuer/vsix-version-stamp@v2
+      with:
+        manifest-file: ${{ env.VsixManifestPath }}
+        vsix-token-source-file: ${{ env.VsixManifestSourcePath }}
+
+    - name: Build
+      run: msbuild /v:m -restore /p:OutDir=\_built
+
+    - name: Setup test
+      uses: darenm/Setup-VSTest@v1.2
+
+    - name: Test
+      run: vstest.console.exe \_built\*Test.dll
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ github.event.repository.name }}.vsix
+        path: /_built/**/*.vsix
+
+  publish:
+    if: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
+    needs: build
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Set up .NET Core
-        uses: actions/setup-dotnet@v2
+      - name: Download Package artifact
+        uses: actions/download-artifact@v3
         with:
-          dotnet-version: '6.0.x' # Hier die Version anpassen
+          name: ${{ github.event.repository.name }}.vsix
 
-      - name: Restore dependencies
-        run: dotnet restore
-
-      - name: Build solution
-        run: dotnet build --configuration Release --no-restore
-
-      - name: Pack VSIX
-        run: dotnet msbuild /t:Restore,Build /p:Configuration=Release /p:DeployExtension=true
-
-      - name: Archive VSIX
-        uses: actions/upload-artifact@v2
+      - name: Upload to Open VSIX
+        uses: timheuer/openvsixpublish@v1
         with:
-          name: vsix
-          path: '**/*.vsix'
+          vsix-file: ${{ github.event.repository.name }}.vsix
 
-  release:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
+      - name: Tag and Release
+        if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[release]') }}
+        id: tag_release
+        uses: softprops/action-gh-release@v1
         with:
-          name: vsix
-          path: ./dist
+          body: Release ${{ needs.build.outputs.version }}
+          tag_name: ${{ needs.build.outputs.version }}
+          files: |
+            **/*.vsix
 
-      - name: Create GitHub Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish extension to Marketplace
+        if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[release]') }}
+        uses: cezarypiatek/VsixPublisherAction@1.0
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-          files: ./dist/*.vsix
+          extension-file: '${{ github.event.repository.name }}.vsix'
+          publish-manifest-file: 'vs-publish.json'
+          personal-access-code: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
