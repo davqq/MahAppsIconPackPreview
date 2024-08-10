@@ -3,7 +3,7 @@
     <Metadata>
         <Identity Id="MahAppsIconPackPreview.4ec776a2-0d38-402b-adc9-9508413af6b0" Version="1.0.2" Language="en-US" Publisher="davq" />
         <DisplayName>MahApps.IconPack Preview Extension</DisplayName>
-        <Description xml:space="preserve">This Visual Studio extension provides a preview of MahApps icons directly in the XAML and C# code editor. When you reference a MahApps icon in your code, this extension displays a visual preview of the icon next to the code reference, making it easier to find and use the correct icons.</Description>
+        <Description xml:space="preserve">Enhance your development with the MahApps.IconPack Preview Extension for Visual Studio Code. Instantly preview MahApps.Metro.IconPacks icons directly in your code, ensuring accuracy and efficiency. Simplify your workflow with real-time icon visualization.</Description>
         <Icon>Resources\logo.png</Icon>
         <PreviewImage>Resources\logo.png</PreviewImage>
         <Tags>MahApps, Icon, Preview</Tags>
