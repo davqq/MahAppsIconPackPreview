@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json.schemastore.org/vsix-publish",
+  "categories": ["tools"],
+  "identity": {
+    "internalName": "MahAppsIconPackPreview",
+    "tags": ["icon", "MahApps", "preview", "wpf", "c#"]
+  },
+  "assetFiles": [
+    {
+      "pathOnDisk": "https://github.com/user-attachments/assets/4c7b7c51-bb2c-468c-91f0-a54956ac2d48",
+      "targetPath": "https://github.com/user-attachments/assets/4c7b7c51-bb2c-468c-91f0-a54956ac2d48"
+    }
+  ],
+  "overview": "README.md",
+  "publisher": "davq",
+  "repo": "https://github.com/davqq/MahAppsIconPackPreview"
+}
