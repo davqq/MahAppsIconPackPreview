@@ -1,6 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/vsix-publish",
-  "categories": ["tools"],
+  "categories": ["coding"],
   "identity": {
     "internalName": "MahAppsIconPackPreview",
     "tags": ["icon", "MahApps", "preview", "wpf", "c#"]
