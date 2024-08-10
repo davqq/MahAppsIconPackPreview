@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-.NET-blue.svg)](https://dotnet.microsoft.com/)
-[![NuGet](https://img.shields.io/nuget/v/MahApps.IconPacks.svg)](https://www.nuget.org/packages/MahApps.Metro.IconPacks)
+[![NuGet](https://img.shields.io/nuget/v/MahApps.Metro.IconPacks.svg)](https://www.nuget.org/packages/MahApps.Metro.IconPacks)
 
 ## Overview
 
@@ -47,7 +47,7 @@ If you encounter any issues or have feedback about the extension, please open an
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
