@@ -14,8 +14,8 @@
     <ProjectGuid>{37008168-2AA6-4C9D-9437-F0D9F9D0304F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MaterialIconPreview</RootNamespace>
-    <AssemblyName>MaterialIconPreview</AssemblyName>
+    <RootNamespace>MahAppsIconPackPreview</RootNamespace>
+    <AssemblyName>MahAppsIconPackPreview</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <UseCodebase>true</UseCodebase>

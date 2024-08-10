@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace MaterialIconPreview.Adornments {
+namespace MahAppsIconPackPreview.Adornments {
     internal class IconTagger : ITagger<IntraTextAdornmentTag>, IDisposable {
         private readonly ITextBuffer _buffer;
         private bool _isProcessing;

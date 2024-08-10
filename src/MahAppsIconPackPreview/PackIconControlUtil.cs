@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Windows.Media;
 
-namespace MaterialIconPreview {
+namespace MahAppsIconPackPreview {
     public class PackIconControlUtil {
 
         public static readonly string REGAX_PATTERN = @"(PackIcon\w+Kind)\.(\w+)";

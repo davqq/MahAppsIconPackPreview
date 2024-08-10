@@ -6,7 +6,7 @@ using Task = System.Threading.Tasks.Task;
 using System.Runtime.InteropServices;
 using System.Threading;
 
-namespace MaterialIconPreview {
+namespace MahAppsIconPackPreview {
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
     [ProvideMenuResource("Menus.ctmenu", 1)]

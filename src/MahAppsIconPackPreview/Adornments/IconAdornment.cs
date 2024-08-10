@@ -8,7 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace MaterialIconPreview.Adornments {
+namespace MahAppsIconPackPreview.Adornments {
     internal sealed class IconAdornment : Image {
         private readonly ITextView _view;
         private static readonly SolidColorBrush _captionTextBrush = (SolidColorBrush)Application.Current.Resources[VsBrushes.CaptionTextKey];

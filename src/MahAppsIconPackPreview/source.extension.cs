@@ -1,4 +1,4 @@
-﻿namespace MaterialIconPreview {
+﻿namespace MahAppsIconPackPreview {
     internal sealed partial class Vsix {
         public const string Id = "MahAppsIconPackPreview.4ec776a2-0d38-402b-adc9-9508413af6b0";
         public const string Name = "MahApps.IconPack Preview Extension";

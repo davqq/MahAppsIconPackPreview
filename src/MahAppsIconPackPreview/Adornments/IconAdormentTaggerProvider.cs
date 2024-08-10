@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Utilities;
 using System.ComponentModel.Composition;
 
-namespace MaterialIconPreview.Adornments {
+namespace MahAppsIconPackPreview.Adornments {
     [Export(typeof(IViewTaggerProvider))]
     [ContentType("code")]
     [TagType(typeof(IntraTextAdornmentTag))]
