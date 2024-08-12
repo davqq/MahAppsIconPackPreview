@@ -5,7 +5,8 @@ using System.Windows.Media;
 namespace MahAppsIconPackPreview {
     public class PackIconControlUtil {
 
-        public static readonly string REGAX_PATTERN = @"(PackIcon\w+Kind)\.(\w+)";
+        public static readonly string CSHARP_REGAX_PATTERN = @"(PackIcon\w+Kind)\.(\w+)";
+        public static readonly string XAML_REGAX_PATTERN = @"<([a-zA-Z0-9]+):PackIconControl\s+([^>]*?)(\w+)\s*=\s*""([^""]+)""\s*/?>";
 
         public static PackIconControlBase CreateIconFromKindString(string kindString, SolidColorBrush textBrush) {
             string[] parts = kindString.Split('.');
