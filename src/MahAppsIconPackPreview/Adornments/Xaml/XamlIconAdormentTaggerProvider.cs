@@ -6,7 +6,7 @@ using System.ComponentModel.Composition;
 
 namespace MahAppsIconPackPreview.Adornments.Xaml {
     [Export(typeof(IViewTaggerProvider))]
-    [ContentType("code")]
+    [ContentType("XAML")]
     [TagType(typeof(IntraTextAdornmentTag))]
     internal sealed class XamlIconAdornmentTaggerProvider : IViewTaggerProvider {
         public ITagger<T> CreateTagger<T>(ITextView textView, ITextBuffer buffer) where T : ITag {

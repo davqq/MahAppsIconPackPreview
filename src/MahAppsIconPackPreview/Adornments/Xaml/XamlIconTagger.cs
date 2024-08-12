@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.Text;
+﻿using MahApps.Metro.IconPacks;
+using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Text.Tagging;
 using System.Collections.Generic;
@@ -44,10 +45,9 @@ namespace MahAppsIconPackPreview.Adornments.Xaml {
                 SnapshotSpan currentSpan = span;
                 string text = currentSpan.GetText();
                 MatchCollection matches = Regex.Matches(text, PackIconControlUtil.XAML_REGAX_PATTERN);
-
                 foreach (Match match in matches) {
-                    IntraTextAdornmentTag tag = new(new IconAdornment(match.Value, _view), null, PositionAffinity.Successor);
-                    SnapshotSpan colorSpan = new(currentSpan.Snapshot, currentSpan.Start + match.Index, 0);
+                    IntraTextAdornmentTag tag = new(new IconAdornment($"PackIcon{match.Groups[2]}Kind.{match.Groups[3]}", _view), null, PositionAffinity.Successor);
+                    SnapshotSpan colorSpan = new(currentSpan.Snapshot, currentSpan.Start + match.Groups[3].Index, 0);
 
                     yield return new TagSpan<IntraTextAdornmentTag>(colorSpan, tag);
                 }
