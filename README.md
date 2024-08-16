@@ -5,7 +5,7 @@
 [![NuGet](https://img.shields.io/nuget/v/MahApps.Metro.IconPacks.svg)](https://www.nuget.org/packages/MahApps.Metro.IconPacks)
 
 
-## Overview
+## Overview 
 
 The **MahApps.IconPack Preview Extension** is a Visual Studio Code extension that provides an instant preview of icons from the [MahApps.Metro.IconPacks](https://github.com/MahApps/MahApps.Metro.IconPacks) directly in your code. This extension is designed to streamline the development process by offering a visual representation of icons right within your development environment.
 
