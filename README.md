@@ -31,7 +31,7 @@ To install the MahApps.IconPack Preview Extension, follow these steps:
 2. When you enter an icon key (e.g., `PackIconModernKind.Settings`) in your code, a preview of the corresponding icon will appear.
 3. Hover over the icon, and a tooltip will appear displaying the icon in a larger size.
 
-### ⚠️Warning⚠️
+## ⚠️Warning⚠️
 
 Ensure that the version of the MahApps.IconPack Preview Extension matches the version of the installed NuGet package for MahApps.Metro.IconPacks in your project. Using mismatched versions might result in incorrect or missing icon previews.
 
