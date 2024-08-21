@@ -6,7 +6,7 @@ namespace MahAppsIconPackPreview {
     public class PackIconControlUtil {
 
         public static readonly string CSHARP_REGAX_PATTERN = @"(PackIcon\w+Kind)\.(\w+)";
-        public static readonly string XAML_REGAX_PATTERN = @"<([a-zA-Z0-9]+):PackIcon([a-zA-Z]+)\b[^>]*?\bKind\s*=\s*""([^""]+)""[^>]*?>";
+        public static readonly string XAML_REGAX_PATTERN = @"<?([a-zA-Z0-9]+):([a-zA-Z]+)\b[^>]*?\bKind\s*=\s*""?([^""]+)""?[^>]*?>";
 
         public static PackIconControlBase CreateIconFromKindString(string kindString, SolidColorBrush textBrush) {
             string[] parts = kindString.Split('.');

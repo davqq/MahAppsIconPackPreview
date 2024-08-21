@@ -4,8 +4,7 @@
 [![Platform](https://img.shields.io/badge/platform-.NET-blue.svg)](https://dotnet.microsoft.com/)
 [![NuGet](https://img.shields.io/nuget/v/MahApps.Metro.IconPacks.svg)](https://www.nuget.org/packages/MahApps.Metro.IconPacks)
 
-
-## Overview 
+## Overview
 
 The **MahApps.IconPack Preview Extension** is a Visual Studio Code extension that provides an instant preview of icons from the [MahApps.Metro.IconPacks](https://github.com/MahApps/MahApps.Metro.IconPacks) directly in your code. This extension is designed to streamline the development process by offering a visual representation of icons right within your development environment.
 
@@ -27,8 +26,8 @@ To install the MahApps.IconPack Preview Extension, follow these steps:
 
 ## Usage
 
-1. After installing the extension, open any `.cs` file that uses MahApps.Metro.IconPacks.
-2. When you enter an icon key (e.g., `PackIconModernKind.Settings`) in your code, a preview of the corresponding icon will appear.
+1. After installing the extension, open any `.cs` or `.xaml` file that uses MahApps.Metro.IconPacks.
+2. When you enter an icon key (e.g., `PackIconModernKind.Settings`, `Kind=Settings`) in your code, a preview of the corresponding icon will appear.
 3. Hover over the icon, and a tooltip will appear displaying the icon in a larger size.
 
 ## ⚠️Warning⚠️
@@ -41,7 +40,6 @@ Here are some examples of how the preview might appear in your code:
 
 ![image](https://github.com/user-attachments/assets/4c7b7c51-bb2c-468c-91f0-a54956ac2d48)
 ![image](https://github.com/user-attachments/assets/3a556053-1ff1-4347-839e-075bb37a7690)
-
 
 When you hover over the icon, the corresponding icon will be displayed.
 

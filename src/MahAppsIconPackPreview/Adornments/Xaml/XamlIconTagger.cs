@@ -45,8 +45,16 @@ namespace MahAppsIconPackPreview.Adornments.Xaml {
                 SnapshotSpan currentSpan = span;
                 string text = currentSpan.GetText();
                 MatchCollection matches = Regex.Matches(text, PackIconControlUtil.XAML_REGAX_PATTERN);
-                foreach (Match match in matches) {
-                    IntraTextAdornmentTag tag = new(new IconAdornment($"PackIcon{match.Groups[2]}Kind.{match.Groups[3]}", _view), null, PositionAffinity.Successor);
+                foreach (Match match in matches) { 
+                    string iconname = $"{(match.Groups[2].ToString().StartsWith("PackIcon") ? "" : "PackIcon")}{match.Groups[2]}Kind.{match.Groups[3]}";
+
+                    var adornment = new IconAdornment().CreateAdornment(iconname);
+
+                    if (adornment == null) {
+                        continue;
+                    }
+
+                    IntraTextAdornmentTag tag = new(adornment, null, PositionAffinity.Successor);
                     SnapshotSpan colorSpan = new(currentSpan.Snapshot, currentSpan.Start + match.Groups[3].Index, 0);
 
                     yield return new TagSpan<IntraTextAdornmentTag>(colorSpan, tag);

@@ -47,7 +47,13 @@ namespace MahAppsIconPackPreview.Adornments.CSharp {
                 MatchCollection matches = Regex.Matches(text, PackIconControlUtil.CSHARP_REGAX_PATTERN);
 
                 foreach (Match match in matches) {
-                    IntraTextAdornmentTag tag = new(new IconAdornment(match.Value, _view), null, PositionAffinity.Successor);
+                    var adornment = new IconAdornment().CreateAdornment(match.Value);
+
+                    if (adornment == null) {
+                        continue;
+                    }
+
+                    IntraTextAdornmentTag tag = new(adornment, null, PositionAffinity.Successor);
                     SnapshotSpan colorSpan = new(currentSpan.Snapshot, currentSpan.Start + match.Index, 0);
 
                     yield return new TagSpan<IntraTextAdornmentTag>(colorSpan, tag);
