@@ -24,6 +24,7 @@ namespace MahAppsIconPackPreview.Adornments {
 
             icon.Width = GetFontSize() + 2;
             icon.Height = icon.Width;
+            icon.Margin = new Thickness(0, -5, 2, 0);
             icon.VerticalAlignment = VerticalAlignment.Center;
             icon.HorizontalAlignment = HorizontalAlignment.Center;
 
@@ -32,7 +33,7 @@ namespace MahAppsIconPackPreview.Adornments {
             var toolTipImage = PackIconControlUtil.CreateIconFromKindString(iconName, _captionTextBrush);
 
             toolTipImage.Width = 32;
-            toolTipImage.Height = 32;
+            toolTipImage.Height = toolTipImage.Width;
             toolTipImage.VerticalAlignment = VerticalAlignment.Center;
             toolTipImage.HorizontalAlignment = HorizontalAlignment.Center;
 
