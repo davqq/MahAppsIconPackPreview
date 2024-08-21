@@ -38,8 +38,8 @@ Ensure that the version of the MahApps.IconPack Preview Extension matches the ve
 
 Here are some examples of how the preview might appear in your code:
 
-![image](https://github.com/user-attachments/assets/4c7b7c51-bb2c-468c-91f0-a54956ac2d48)
-![image](https://github.com/user-attachments/assets/3a556053-1ff1-4347-839e-075bb37a7690)
+![image](https://github.com/user-attachments/assets/a1fc4e69-d738-4ba0-8b0c-825b5f5c9ec2)
+![image](https://github.com/user-attachments/assets/eaeeb437-4384-458f-bf04-91af2a93758b)
 
 When you hover over the icon, the corresponding icon will be displayed.
 
