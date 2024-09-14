@@ -15,7 +15,7 @@ namespace MahAppsIconPackPreview.Adornments {
             ThreadHelper.ThrowIfNotOnUIThread();
         }
 
-        public PackIconControlBase CreateAdornment(string iconName) {
+        public static PackIconControlBase CreateAdornment(string iconName) {
             PackIconControlBase icon = PackIconControlUtil.CreateIconFromKindString(iconName, _captionTextBrush);
 
             if (icon == null) {

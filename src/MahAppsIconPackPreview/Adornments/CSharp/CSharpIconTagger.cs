@@ -47,7 +47,7 @@ namespace MahAppsIconPackPreview.Adornments.CSharp {
                 MatchCollection matches = Regex.Matches(text, PackIconControlUtil.CSHARP_REGAX_PATTERN);
 
                 foreach (Match match in matches) {
-                    var adornment = new IconAdornment().CreateAdornment(match.Value);
+                    var adornment = IconAdornment.CreateAdornment(match.Value);
 
                     if (adornment == null) {
                         continue;
