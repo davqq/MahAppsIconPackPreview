@@ -11,9 +11,7 @@ namespace MahAppsIconPackPreview.Adornments.Xaml {
         private readonly ITextBuffer _buffer;
         private bool _isProcessing;
         private bool _isDisposed;
-        private readonly ITextView _view;
-        public XamlIconTagger(ITextBuffer buffer, ITextView view) {
-            _view = view;
+        public XamlIconTagger(ITextBuffer buffer) {
             _buffer = buffer;
             _buffer.Changed += OnBufferChange;
         }

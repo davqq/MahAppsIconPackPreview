@@ -1,5 +1,4 @@
 using MahApps.Metro.IconPacks;
-using MaterialIconPreview;
 using System;
 using System.Windows.Media;
 
@@ -7,20 +6,20 @@ namespace MahAppsIconPackPreview.Test {
     public class PackIconControlUtilTest {
         public class PackIconControlUtilTests {
             [Theory]
-            [InlineData("PackIconMaterialKind.Pause", typeof(PackIconMaterial))]
-            [InlineData("PackIconFontAwesomeKind.Flag", typeof(PackIconFontAwesome))]
-            [InlineData("PackIconModernKind.Monitor", typeof(PackIconModern))]
-            public void CreateIconFromKindString_ValidInput_ReturnsExpectedIcon(string kindString, Type expectedType) {
+            [InlineData(PackIconMaterialKind.Pause, typeof(PackIconMaterial))]
+            [InlineData(PackIconFontAwesomeKind.FlagSolid, typeof(PackIconFontAwesome))]
+            [InlineData(PackIconModernKind.Monitor, typeof(PackIconModern))]
+            public void CreateIconFromKindString_ValidInput_ReturnsExpectedIcon(object kind, Type expectedType) {
                 // Arrange
                 SolidColorBrush brush = new(Colors.Red);
 
                 // Act
-                PackIconControlBase icon = PackIconControlUtil.CreateIconFromKindString(kindString, brush);
+                PackIconControlBase icon = PackIconControlUtil.CreateIconFromKindString($"{expectedType.Name}.{kind}", brush);
 
                 // Assert
                 Assert.NotNull(icon);
                 Assert.IsType(expectedType, icon);
-                Assert.Equal(kindString.Split('.')[1], expectedType.GetProperty("Kind").GetValue(icon));
+                Assert.Equal(kind.ToString()?.Split('.')[1], expectedType.GetProperty("Kind")?.GetValue(icon));
                 Assert.Equal(brush, icon.Foreground);
             }
 

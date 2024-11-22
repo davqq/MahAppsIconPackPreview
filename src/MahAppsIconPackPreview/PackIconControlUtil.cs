@@ -3,11 +3,10 @@ using System.Reflection;
 using System.Windows.Media;
 
 namespace MahAppsIconPackPreview {
-    public class PackIconControlUtil {
-
-        public static readonly string MAHAPPS_ICONS = @"BootstrapIcons|BoxIcons|CircumIcons|Codicons|Coolicons|Core|Entypo|EvaIcons|FeatherIcons|FileIcons|FontAwesome|Fontaudio|Fontisto|ForkAwesome|GameIcons|Ionicons|JamIcons|Lucide|Material|MaterialDesign|MaterialLight|MemoryIcons|Microns|Modern|Octicons|PhosphorIcons|PicolIcons|PixelartIcons|RPGAwesome|RadixIcons|RemixIcon|SimpleIcons|Typicons|Unicons|VaadinIcons|WeatherIcons|Zondicons";
+    public static class PackIconControlUtil {
+        private static readonly string MAHAPPS_ICONS = "BootstrapIcons|BoxIcons|CircumIcons|Codicons|Coolicons|Core|Entypo|EvaIcons|FeatherIcons|FileIcons|FontAwesome|Fontaudio|Fontisto|ForkAwesome|GameIcons|Ionicons|JamIcons|Lucide|Material|MaterialDesign|MaterialLight|MemoryIcons|Microns|Modern|Octicons|PhosphorIcons|PicolIcons|PixelartIcons|RPGAwesome|RadixIcons|RemixIcon|SimpleIcons|Typicons|Unicons|VaadinIcons|WeatherIcons|Zondicons";
         public static readonly string CSHARP_REGAX_PATTERN = @$"(PackIcon({MAHAPPS_ICONS})+Kind)\.(\w+)";
-        public static readonly string XAML_REGAX_PATTERN = @$"(<|{{)([a-zA-Z]+):(PackIcon)?({MAHAPPS_ICONS})\s+(Kind=""?([a-zA-Z]+)""?|([a-zA-Z]+))\s*(\/>|>|}})";
+        public static readonly string XAML_REGAX_PATTERN = $"(<|{{)([a-zA-Z]+):(PackIcon)?({MAHAPPS_ICONS})\\s+(Kind=\"?([a-zA-Z]+)\"?|([a-zA-Z]+))\\s*(\\/>|>|}})";
 
         public static PackIconControlBase CreateIconFromKindString(string kindString, SolidColorBrush textBrush) {
             string[] parts = kindString.Split('.');

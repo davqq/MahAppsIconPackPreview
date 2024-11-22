@@ -10,9 +10,7 @@ namespace MahAppsIconPackPreview.Adornments.CSharp {
         private readonly ITextBuffer _buffer;
         private bool _isProcessing;
         private bool _isDisposed;
-        private readonly ITextView _view;
-        public CSharpIconTagger(ITextBuffer buffer, ITextView view) {
-            _view = view;
+        public CSharpIconTagger(ITextBuffer buffer) {
             _buffer = buffer;
             _buffer.Changed += OnBufferChange;
         }
