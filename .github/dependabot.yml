@@ -9,4 +9,6 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
+    allow:
+      - dependency-name: "MahApps.Metro.IconPacks"
     open-pull-requests-limit: 25
