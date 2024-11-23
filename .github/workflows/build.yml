@@ -28,7 +28,7 @@ jobs:
       uses: timheuer/bootstrap-dotnet@v1
       with:
         nuget: 'false'
-        sdk: 'false'
+        sdk: 'true'
         msbuild: 'true'
 
     - name: Increment VSIX version
