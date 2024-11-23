@@ -27,7 +27,7 @@
   <ItemGroup>
     <None Update="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Generator>VsixManifestGenerator</Generator>
       <LastGenOutput>source.extension.cs</LastGenOutput>
     </None>
