@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <LangVersion>latest</LangVersion>
@@ -27,6 +27,7 @@
   <ItemGroup>
     <None Update="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory
       <Generator>VsixManifestGenerator</Generator>
       <LastGenOutput>source.extension.cs</LastGenOutput>
     </None>
