@@ -50,7 +50,7 @@
       <Version>17.12.40392</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Shell.Framework">
-      <Version>17.12.40391</Version>
+      <Version>17.13.40008</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.12.2069" />
     <PackageReference Include="System.ComponentModel.Composition">
