@@ -17,6 +17,8 @@
     <StartProgram Condition="'$(DevEnvDir)' != ''">$(DevEnvDir)devenv.exe</StartProgram>
     <StartArguments>/rootsuffix Exp</StartArguments>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<VsixOutputPath>$(OutputPath)</VsixOutputPath>
+		<VSIXTargetVersion>17.0</VSIXTargetVersion>
 </PropertyGroup>
   <ItemGroup>
     <Compile Update="source.extension.cs">
