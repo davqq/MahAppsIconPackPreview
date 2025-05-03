@@ -6,7 +6,7 @@ on:
       - '*'    # Triggert z. B. bei v1.0.0
   pull_request:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 jobs:

@@ -9,7 +9,7 @@
 	<ItemGroup>
 		<PackageReference Include="MahApps.Metro.IconPacks" Version="5.1.0" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
-		<PackageReference Include="Microsoft.VisualStudio.Shell.15.0" Version="17.12.40392" />
+		<PackageReference Include="Microsoft.VisualStudio.Shell.15.0" Version="17.13.40008" />
 		<PackageReference Include="Microsoft.VisualStudio.Shell.Framework" Version="17.13.40008" />
 		<PackageReference Include="System.ComponentModel.Composition" Version="9.0.4" />
 		<PackageReference Include="xunit" Version="2.9.3" />
