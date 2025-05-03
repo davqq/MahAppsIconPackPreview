@@ -2,8 +2,10 @@ name: Build and Release VSIX Extension
 
 on:
   push:
+    branches:
+      - master
     tags:
-      - '*'    # Triggert z. B. bei v1.0.0
+      - '*'
   pull_request:
     branches:
       - master
@@ -78,3 +80,7 @@ jobs:
           files: ${{ steps.find_vsix.outputs.vsix_path }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to Visual Studio Marketplace
+        run: |
+          vsce publish --pat ${{ secrets.VSIX_PAT }} --packagePath "${{ steps.find_vsix.outputs.vsix_path }}"
+        shell: bash
