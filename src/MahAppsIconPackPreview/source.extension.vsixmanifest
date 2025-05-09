@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="MahAppsIconPackPreview.4ec776a2-0d38-402b-adc9-9508413af6b0" Version="1.0.2" Language="en-US" Publisher="davq" />
-        <DisplayName>MahApps.IconPack Preview Extension</DisplayName>
+        <Identity Id="mahapps-iconpack-preview" Version="1.0.2" Language="en-US" Publisher="davq" />
+				<DisplayName>MahApps.IconPack Preview Extension</DisplayName>
         <Description xml:space="preserve">Simplify your workflow with real-time icon visualization</Description>
         <Icon>Resources\logo.png</Icon>
         <PreviewImage>Resources\logo.png</PreviewImage>
